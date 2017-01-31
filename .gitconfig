@@ -1,0 +1,11 @@
+[user]
+	name = Oliver Blanthorn
+	email = freedom4cows@gmail.com
+[core]
+	editor = vim
+
+[color]
+	status = auto
+	branch = auto
+	interactive = auto
+	diff = auto

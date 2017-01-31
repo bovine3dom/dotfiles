@@ -1,0 +1,15 @@
+[$Version]
+update_info=okular.upd:sep_settings
+
+[Core General]
+ExternalEditor=Lyxclient
+
+[Core Performance]
+MemoryLevel=Greedy
+
+[General]
+UseKTTSD=false
+
+[Main View]
+ShowBottomBar=false
+ShowLeftPanel=false

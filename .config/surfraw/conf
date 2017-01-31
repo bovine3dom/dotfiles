@@ -1,0 +1,5 @@
+SURFRAW_text_browser="/usr/bin/elinks"
+SURFRAW_graphical=no
+SURFRAW_graphical_browser=xdg-open
+SURFRAW_text=yes
+SURFRAW_lang=uk
