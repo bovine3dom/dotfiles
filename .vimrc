@@ -2,6 +2,10 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
+set nu relativenumber
+
+nnoremap <F5> :UndotreeToggle<cr>:UndotreeFocus<cr>
+
 if has("persistent_undo")
 	set undodir=~/.undodir/
 	set undofile
@@ -9,17 +13,17 @@ if has("persistent_undo")
 	set undoreload=10000
 endif
 
-set nu relativenumber
-
-
-nnoremap <F5> :UndotreeToggle<cr> :UndotreeFocus<cr>
-
 set expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
-set ignorecase smartcase
+set ignorecase smartcase incsearch hlsearch
 
+set autochdir
 set cursorline
+set lazyredraw
+noremap <leader><space> :nohlsearch<CR>
 
-set clipboard+=unnamed " Use the middle click to store yanked/deleted text; unnamedplus oes ctrl+v
+set encoding=UTF-8
 
-set title " Display filename in titlebar (for mod+b!)
+set shell=/bin/bash
+
+let mapleader = ","

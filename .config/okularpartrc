@@ -3,6 +3,7 @@ update_info=okular.upd:sep_settings
 
 [Core General]
 ExternalEditor=Lyxclient
+ObeyDRM=false
 
 [Core Performance]
 MemoryLevel=Greedy
@@ -13,3 +14,7 @@ UseKTTSD=false
 [Main View]
 ShowBottomBar=false
 ShowLeftPanel=false
+
+[PageView]
+ShowScrollBars=false
+ViewContinuous=false

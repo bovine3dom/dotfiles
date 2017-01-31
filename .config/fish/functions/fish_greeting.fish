@@ -1,3 +1,3 @@
 function fish_greeting
-	cowsay (fortune)
+	cowsay (fortune -s)
 end
