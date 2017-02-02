@@ -12,5 +12,5 @@ if status --is-login
     end
 end
 #ssh-add -l |grep -q /.ssh/thinkpad_rsa; or ssh-add ~/.ssh/thinkpad_rsa
-#eval (envoy -pf)
+eval (envoy -pf)
 
