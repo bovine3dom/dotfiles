@@ -7,7 +7,7 @@ fzf_key_bindings
 if status --is-login
     envoy
     set PATH $PATH /usr/bin /sbin ~/bin
-    if test -z "$DISPLAY" -a $XDG_VTNR = 1
+    if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
         exec startx -- -keeptty
     end
 end
