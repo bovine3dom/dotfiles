@@ -27,3 +27,5 @@ set encoding=UTF-8
 set shell=/bin/bash
 
 let mapleader = ","
+
+set linebreak breakindent
