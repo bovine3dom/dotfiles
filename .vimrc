@@ -29,3 +29,7 @@ set shell=/bin/bash
 let mapleader = ","
 
 set linebreak breakindent
+
+au BufRead,BufNewFile *.md		set syntax=markdown
+
+autocmd BufRead,BufNewFile ~/Dropbox/diary* set syntax=markdown
