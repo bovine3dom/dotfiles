@@ -37,3 +37,7 @@ autocmd BufRead,BufNewFile ~/Dropbox/diary* set filetype=pandoc
 let g:pandoc#keyboard#display_motions = 0
 
 let g:airline_theme = "sol"
+
+set diffopt+=vertical
+
+let g:pandoc#folding#level = 4

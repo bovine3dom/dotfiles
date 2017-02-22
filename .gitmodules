@@ -37,3 +37,6 @@
 [submodule ".vim/bundle/nvim-ipy"]
 	path = .vim/bundle/nvim-ipy
 	url = https://github.com/bfredl/nvim-ipy
+[submodule ".vim/bundle/vim-surround"]
+	path = .vim/bundle/vim-surround
+	url = https://github.com/tpope/vim-surround
