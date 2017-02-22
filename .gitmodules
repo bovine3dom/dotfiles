@@ -13,9 +13,6 @@
 [submodule ".vim/bundle/vim-sensible"]
 	path = .vim/bundle/vim-sensible
 	url = https://github.com/tpope/vim-sensible
-[submodule ".vim/bundle/nvim-ipy"]
-	path = .vim/bundle/nvim-ipy
-	url = https://github.com/bfredl/nvim-ipy
 [submodule ".vim/bundle/todo.txt-vim"]
 	path = .vim/bundle/todo.txt-vim
 	url = https://github.com/freitass/todo.txt-vim
