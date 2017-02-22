@@ -33,3 +33,5 @@ set linebreak breakindent
 au BufRead,BufNewFile *.md		set syntax=markdown
 
 autocmd BufRead,BufNewFile ~/Dropbox/diary* set syntax=markdown
+
+let g:pandoc#keyboard#display_motions = 0
