@@ -1,6 +1,7 @@
 [user]
 	name = Oliver Blanthorn
 	email = freedom4cows@gmail.com
+
 [core]
 	editor = vim
 
@@ -9,3 +10,7 @@
 	branch = auto
 	interactive = auto
 	diff = auto
+    ui = true
+
+[core]
+    excludesfile = ~/.gitignore

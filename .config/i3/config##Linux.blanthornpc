@@ -52,7 +52,7 @@ font pango:DejaVu Sans Mono 12
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal #i3-sensible-terminal
+bindsym $mod+Return exec dbus-launch gnome-terminal #i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -188,4 +188,5 @@ bar {
         status_command i3status
 }
 
+# Syntax file: https://github.com/PotatoesMaster/i3-vim-syntax
 # vim:filetype=i3
