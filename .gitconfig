@@ -1,16 +1,24 @@
 [user]
 	name = Oliver Blanthorn
 	email = freedom4cows@gmail.com
-
 [core]
 	editor = vim
-
 [color]
 	status = auto
 	branch = auto
 	interactive = auto
 	diff = auto
-    ui = true
-
+    ui = auto
 [core]
     excludesfile = ~/.gitignore
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[log]
+    decorate = auto
+    date = relative
+[merge]
+    tool = vimdiff
+    conflictstyle = diff3
+    prompt = false
