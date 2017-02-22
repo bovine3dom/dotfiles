@@ -4,7 +4,7 @@ filetype plugin indent on
 
 set nu relativenumber
 
-nnoremap <F5> :UndotreeToggle<cr>:UndotreeFocus<cr>
+nnoremap <F4> :UndotreeToggle<cr>:UndotreeFocus<cr>
 
 if has("persistent_undo")
 	set undodir=~/.undodir/
