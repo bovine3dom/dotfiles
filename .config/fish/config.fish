@@ -3,6 +3,8 @@ setenv EDITOR /usr/bin/vim
 
 fzf_key_bindings
 
+. ~/.config/fish/functions/z.fish
+
 # have moved envoy to within this switch, check to see if it still works?
 if status --is-login
     envoy
