@@ -41,3 +41,5 @@ let g:airline_theme = "sol"
 set diffopt+=vertical
 
 let g:pandoc#folding#level = 4
+
+set tildeop
