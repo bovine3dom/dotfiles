@@ -2,6 +2,7 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
+
 set nu relativenumber
 
 nnoremap <F4> :UndotreeToggle<cr>:UndotreeFocus<cr>
@@ -43,3 +44,7 @@ set diffopt+=vertical
 let g:pandoc#folding#level = 4
 
 set tildeop
+
+set wildmode=longest,list,full
+
+set wildmenu
