@@ -50,3 +50,7 @@ set wildmode=longest,list,full
 set wildmenu
 
 set scrolloff=15 " prevents cursor from reaching the edge of the screen
+
+set mouse=a
+
+set noshowmode
