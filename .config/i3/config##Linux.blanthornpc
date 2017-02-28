@@ -18,6 +18,7 @@ exec --no-startup-id keepass
 exec --no-startup-id guake
 exec --no-startup-id qnotero
 exec --no-startup-id nm-applet
+exec --no-startup-id compton --no-fading-openclose -b --vsync opengl
 exec_always --no-startup-id feh --bg-fill --randomize /home/olie/Pictures/Earthpapers/
 exec_always --no-startup-id xrandr --output DP1 --dpi 160 --primary
 #exec_always --no-startup-id xrandr --output DP2 --left-of DP2
