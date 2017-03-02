@@ -40,3 +40,6 @@
 [submodule ".vim/bundle/vim-surround"]
 	path = .vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround
+[submodule ".vim/bundle/vim-literate-coffeescript"]
+	path = .vim/bundle/vim-literate-coffeescript
+	url = https://github.com/cmcaine/vim-literate-coffeescript
