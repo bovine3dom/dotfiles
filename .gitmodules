@@ -43,3 +43,6 @@
 [submodule ".vim/bundle/vim-literate-coffeescript"]
 	path = .vim/bundle/vim-literate-coffeescript
 	url = https://github.com/cmcaine/vim-literate-coffeescript
+[submodule ".vim/bundle/vim-pdfpc-syntax"]
+	path = .vim/bundle/vim-pdfpc-syntax
+	url = https://github.com/florentc/vim-pdfpc-syntax
