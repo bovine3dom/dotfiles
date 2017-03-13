@@ -15,7 +15,7 @@ set $mod Mod1
 exec --no-startup-id setxkbmap gb
 exec --no-startup-id dropbox
 exec --no-startup-id keepass
-exec --no-startup-id guake
+exec --no-startup-id terminator -H
 exec --no-startup-id qnotero
 exec --no-startup-id nm-applet
 exec --no-startup-id compton --no-fading-openclose -b --vsync opengl
@@ -172,6 +172,9 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+
+	
+for_window [class="Terminator" ] floating enable move absolute position 0 0
 ##client.focused #9966ff
 #
 #client.focused #4c7899 #285577 #ffffff #2e9ef4   #285577
