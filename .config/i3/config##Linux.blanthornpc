@@ -12,20 +12,23 @@ set $mod Mod1
 
 # for_window [class="keepass2"] move scratchpad
 
+exec_always --no-startup-id xrandr --output HDMI1 --auto --left-of DP1
+
 exec --no-startup-id setxkbmap gb
 exec --no-startup-id setxkbmap -option caps:ctrl_modifier
 exec --no-startup-id xcape -e "Caps_Lock=Escape"
 exec --no-startup-id dropbox
-exec --no-startup-id keepass
+# exec --no-startup-id keepass
 exec --no-startup-id terminator -H
 exec --no-startup-id qnotero
 exec --no-startup-id nm-applet
 exec --no-startup-id compton --no-fading-openclose -b --vsync opengl
-exec_always --no-startup-id feh --bg-fill --randomize /home/olie/Pictures/Earthpapers/
+exec_always --no-startup-id sleep 1 && feh --bg-fill --randomize /home/olie/Pictures/Earthpapers/
 exec_always --no-startup-id xrandr --output DP1 --dpi 160 --primary
 #exec_always --no-startup-id xrandr --output DP2 --left-of DP2
 exec --no-startup-id  xinput set-prop 12 "Device Accel Constant Deceleration" 0.4
-exec --no-startup-id polybar example
+exec --no-startup-id MONITOR=DP-1 polybar example
+exec --no-startup-id MONITOR=HDMI-1 polybar example
 bindsym $mod+b exec quickswitch.py
 bindsym $mod+minus scratchpad show
 bindsym $mod+Shift+S exec xlock -mode matrix
