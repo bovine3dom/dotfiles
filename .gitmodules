@@ -58,3 +58,6 @@
 [submodule ".vim/bundle/goyo.vim"]
 	path = .vim/bundle/goyo.vim
 	url = https://github.com/junegunn/goyo.vim
+[submodule ".vim/bundle/vCoolor.vim"]
+	path = .vim/bundle/vCoolor.vim
+	url = https://github.com/KabbAmine/vCoolor.vim
