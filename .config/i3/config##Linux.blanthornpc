@@ -11,24 +11,27 @@
 set $mod Mod1
 
 # for_window [class="keepass2"] move scratchpad
+gaps inner 20
+gaps outer 0
 
-exec_always --no-startup-id xrandr --output HDMI1 --auto --left-of DP1
 
-exec --no-startup-id setxkbmap gb
-exec --no-startup-id setxkbmap -option caps:ctrl_modifier
+# exec --no-startup-id setxkbmap gb
+# exec --no-startup-id setxkbmap -option caps:ctrl_modifier
 exec --no-startup-id xcape -e "Caps_Lock=Escape"
 exec --no-startup-id dropbox
+exec --no-startup-id xset -dpms
+
 # exec --no-startup-id keepass
-exec --no-startup-id terminator -H
+# exec --no-startup-id terminator -H
+exec --no-startup-id guake
 exec --no-startup-id qnotero
 exec --no-startup-id nm-applet
-exec --no-startup-id compton --no-fading-openclose -b --vsync opengl
-exec_always --no-startup-id sleep 1 && feh --bg-fill --randomize /home/olie/Pictures/Earthpapers/
-exec_always --no-startup-id xrandr --output DP1 --dpi 160 --primary
+# exec --no-startup-id compton --no-fading-openclose -b --vsync opengl -- breaks multiple displays
+# exec_always --no-startup-id feh --bg-fill --randomize /home/olie/Pictures/Earthpapers/
 #exec_always --no-startup-id xrandr --output DP2 --left-of DP2
 exec --no-startup-id  xinput set-prop 12 "Device Accel Constant Deceleration" 0.4
-exec --no-startup-id MONITOR=DP-1 polybar example
-exec --no-startup-id MONITOR=HDMI-1 polybar example
+# exec --no-startup-id MONITOR=DP-1 polybar example
+# exec --no-startup-id MONITOR=HDMI-1 polybar example
 bindsym $mod+b exec quickswitch.py
 bindsym $mod+minus scratchpad show
 bindsym $mod+Shift+S exec xlock -mode matrix
@@ -39,7 +42,7 @@ bindsym $mod+Shift+minus move scratchpad
 # The middle button over a titlebar kills the window
 bindsym --release button2 kill
 
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 0
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -182,6 +185,8 @@ bindsym $mod+r mode "resize"
 
 	
 for_window [class="Terminator" ] floating enable move absolute position 0 0
+for_window [class="Yad" ] floating enable
+
 ##client.focused #9966ff
 #
 #client.focused #4c7899 #285577 #ffffff #2e9ef4   #285577
@@ -198,6 +203,9 @@ for_window [class="Terminator" ] floating enable move absolute position 0 0
 #        tray_output primary
 #        status_command i3status
 #}
+
+exec_always --no-startup-id ~/bin/sort_out_displays.sh
+# restarts polybar, does xrandr, changes backgrounds
 
 # Syntax file: https://github.com/PotatoesMaster/i3-vim-syntax
 # vim:filetype=i3

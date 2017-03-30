@@ -1,4 +1,3 @@
-#
 # ~/.bashrc
 #
 
@@ -11,7 +10,9 @@ if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
   exec startx
 fi
 
-keychain --quiet -Q ~/.ssh/*_rsa
+keychain --quiet -Q --agents gpg Blanthorn
+keychain --quiet -Q --agents ssh ~/.ssh/*_rsa
 . ~/.keychain/$HOSTNAME-sh
+. ~/.keychain/$HOSTNAME-sh-gpg
 
 exec fish
