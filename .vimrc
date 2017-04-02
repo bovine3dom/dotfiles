@@ -58,3 +58,6 @@ let g:goyo_height = "95%"
 au BufRead,BufNewFile *.md		set syntax=markdown  | set spell | set norelativenumber | set nonumber | Goyo | set showmode
 
 autocmd BufRead,BufNewFile ~/Dropbox/diary* set syntax=markdown  | set spell 
+
+" chmod +x on scripts
+au BufWritePost * if getline(1) =~ "^#!" | silent !chmod +x % | endif
