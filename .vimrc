@@ -6,6 +6,8 @@ filetype plugin indent on
 set nu relativenumber
 
 nnoremap <F4> :UndotreeToggle<cr>:UndotreeFocus<cr>
+"map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR> "swaps between
+".h and .cpp files
 
 if has("persistent_undo")
 	set undodir=~/.undodir/
