@@ -23,19 +23,16 @@ set ignorecase smartcase incsearch hlsearch
 set autochdir
 set cursorline
 set lazyredraw
+let mapleader = ","
+let maplocalleader = ","
 noremap <leader><space> :nohlsearch<CR>
 
 set encoding=UTF-8
 
 set shell=/bin/bash
 
-let mapleader = ","
 
 set linebreak breakindent
-
-au BufRead,BufNewFile *.md		set syntax=markdown
-
-autocmd BufRead,BufNewFile ~/Dropbox/diary* set filetype=pandoc
 
 let g:pandoc#keyboard#display_motions = 0
 
@@ -56,3 +53,13 @@ set scrolloff=15 " prevents cursor from reaching the edge of the screen
 set mouse=a
 
 set noshowmode
+
+let g:goyo_width = "90%" 
+let g:goyo_height = "95%"
+
+au BufRead,BufNewFile *.md		set syntax=markdown  | set spell | set norelativenumber | set nonumber | Goyo | set showmode
+
+autocmd BufRead,BufNewFile ~/Dropbox/diary* set syntax=markdown  | set spell 
+
+" chmod +x on scripts
+au BufWritePost * if getline(1) =~ "^#!" | silent !chmod +x % | endif
