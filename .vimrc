@@ -62,4 +62,4 @@ au BufRead,BufNewFile *.md		set syntax=markdown  | set spell | set norelativenum
 autocmd BufRead,BufNewFile ~/Dropbox/diary* set syntax=markdown  | set spell 
 
 " chmod +x on scripts
-au BufWritePost * if getline(1) =~ "^#!" | silent !chmod +x % | endif
+au BufWritePost * if getline(1) =~ "^#!" | execute "silent !chmod +x %" | endif
