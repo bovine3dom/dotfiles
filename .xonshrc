@@ -1,0 +1,19 @@
+# import xontrib.prompt_vi_mode
+
+def myprompt():
+    # myvimode = xontrib.prompt_vi_mode.vi_mode()[0]
+    # colourstring = "{NO_COLOR}"
+    # if myvimode == "I":
+    #     colourstring = "{GREEN}"
+    # else:
+    #     colourstring = "{RED}"
+        
+    return(
+            # colourstring + '[' + myvimode + ']' +
+            '{NO_COLOR}{env_name:{} }{NO_COLOR}{user}@{hostname} {GREEN}{cwd}{branch_color}{curr_branch: {}}{NO_COLOR}> '
+    )
+
+$PROMPT = myprompt
+# $PROMPT = '{vi_mode} {env_name:{} }{BOLD_GREEN}{user}@{hostname}{BOLD_BLUE} {cwd}{branch_color}{curr_branch: {}}{NO_COLOR} {BOLD_BLUE}{prompt_end}{NO_COLOR} '
+
+# vim:filetype=python

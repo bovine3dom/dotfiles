@@ -1,0 +1,17 @@
+{
+ "env": {
+  "AUTO_CD": true,
+  "AUTO_PUSHD": true,
+  "EDITOR": "vim",
+  "MOUSE_SUPPORT": true,
+  "PAGER": "less",
+  "UPDATE_PROMPT_ON_KEYPRESS": false,
+  "VI_MODE": true,
+  "HISTCONTROL": "ignoredups",
+  "XONSH_AUTOPAIR": true
+ },
+ "xontribs": [
+  "coreutils",
+  "z"
+ ]
+}
