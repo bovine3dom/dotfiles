@@ -18,3 +18,4 @@ ShowLeftPanel=false
 [PageView]
 ShowScrollBars=false
 ViewContinuous=false
+ViewMode=Facing

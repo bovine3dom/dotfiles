@@ -1,3 +1,3 @@
-function pls
-	eval command sudo $history[1]
+function pls --description 'alias pls fuck'
+	fuck  $argv;
 end
