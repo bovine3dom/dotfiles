@@ -13,9 +13,11 @@
 [core]
     excludesfile = ~/.gitignore
 [diff]
-	tool = vimdiff
+	tool = icdiff
 [difftool]
 	prompt = false
+[difftool "icdiff"]
+    cmd = icdiff --line-numbers $LOCAL $REMOTE
 [log]
     decorate = auto
     date = relative
