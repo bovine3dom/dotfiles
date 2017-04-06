@@ -1,5 +1,6 @@
 fish_vi_key_bindings
 setenv EDITOR /usr/bin/vim
+setenv GPG_TTY (tty)
 
 
 fzf_key_bindings
@@ -16,3 +17,8 @@ end
 if test (string match "*thinkpad2*" (uname -a))
     eval (envoy -pf)
 end
+
+keychain --quiet -Q --agents ssh ~/.ssh/*_rsa
+keychain --quiet -Q --agents gpg Blanthorn
+bass '. ~/.keychain/$HOSTNAME-sh'
+bass '. ~/.keychain/$HOSTNAME-sh-gpg'

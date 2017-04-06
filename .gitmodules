@@ -61,3 +61,6 @@
 [submodule ".vim/bundle/vCoolor.vim"]
 	path = .vim/bundle/vCoolor.vim
 	url = https://github.com/KabbAmine/vCoolor.vim
+[submodule ".vim/bundle/vim-fish"]
+	path = .vim/bundle/vim-fish
+	url = https://github.com/dag/vim-fish
