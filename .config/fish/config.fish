@@ -14,11 +14,5 @@ if status --is-login
     end
 end
 
-if test (string match "*thinkpad2*" (uname -a))
-    eval (envoy -pf)
-end
-
 keychain --quiet -Q --agents ssh ~/.ssh/*_rsa
-keychain --quiet -Q --agents gpg Blanthorn
 bass '. ~/.keychain/$HOSTNAME-sh'
-bass '. ~/.keychain/$HOSTNAME-sh-gpg'
