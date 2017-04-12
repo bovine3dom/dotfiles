@@ -2,6 +2,8 @@
     name = Oliver Blanthorn
 	email = freedom4cows@gmail.com
     signingKey = Blanthorn
+[push]
+    default = simple
 [core]
 	editor = vim
 [color]
