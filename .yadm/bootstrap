@@ -9,7 +9,7 @@ mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vi
 
 echo "Init submodules"
 yadm submodule sync
-yadm submodule update --recursive --init --depth=1
+yadm submodule update --recursive --init
 
 echo "Update fish plugins"
 fish -c fisher up 
