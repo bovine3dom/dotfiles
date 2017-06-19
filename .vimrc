@@ -63,3 +63,7 @@ autocmd BufRead,BufNewFile ~/Dropbox/diary* set syntax=markdown  | set spell
 
 " chmod +x on scripts
 au BufWritePost * if getline(1) =~ "^#!" | execute "silent !chmod +x %" | endif
+
+" vim-pandoc settings
+let g:pandoc#modules#disabled = ["folding"]
+let g:pandoc#syntax#conceal#use = 0
