@@ -8,6 +8,7 @@ noremap j 10j
 noremap k 10k
 noremap Y oyoutube<Space>
 noremap J :downloads<CR>
+noremap x :stop<CR>
 source! /home/olie/.vimperatorrc.local
 
 " vim: set ft=vimperator:
