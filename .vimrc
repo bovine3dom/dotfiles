@@ -67,3 +67,19 @@ au BufWritePost * if getline(1) =~ "^#!" | execute "silent !chmod +x %" | endif
 " vim-pandoc settings
 let g:pandoc#modules#disabled = ["folding"]
 let g:pandoc#syntax#conceal#use = 0
+
+let g:startify_custom_header = [
+                                \ '                                                        ,,,           ',
+                                \ '                                                       (o o)          ',
+                                \ '----------------------------------------------------ooO-(_)-Ooo-------',
+                                \ '                              _                                 _ ___ ',
+                                \ '               __      _____ | |_     _ __   ___     __ _ _   _(_) _ \',
+                                \ '               \ \ /\ / / _ \| __|   | ''_ \ / _ \   / _` | | | | \// /',
+                                \ '                \ V  V / (_) | |_ _  | | | | (_) | | (_| | |_| | | \/ ',
+                                \ '                 \_/\_/ \___/ \__( ) |_| |_|\___/   \__, |\__,_|_| () ',
+                                \ '                                 |/                 |___/             ',
+                                \ ]
+
+
+
+
