@@ -1,3 +1,3 @@
 function fish_greeting
-	cowsay (fortune -s)
+	cowsay (fortune -s) | lolcat
 end
