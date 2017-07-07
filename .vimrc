@@ -83,3 +83,12 @@ let g:startify_custom_header = [
 
 
 
+" Quitting whether Goyo is active or not
+ca wq :w<cr>:call Quit()<cr>
+ca q :call Quit()<cr>
+function! Quit()
+    if exists('#goyo')
+        Goyo
+    endif
+    quit
+endfunction
