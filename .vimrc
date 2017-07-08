@@ -84,11 +84,37 @@ let g:startify_custom_header = [
 
 
 " Quitting whether Goyo is active or not
-ca wq :w<cr>:call Quit()<cr>
-ca q :call Quit()<cr>
-function! Quit()
-    if exists('#goyo')
-        Goyo
-    endif
-    quit
+"ca wq :w<cr>:call Quit()<cr>
+"ca q :call Quit()<cr>
+"function! Quit()
+"    if exists('#goyo')
+"        Goyo
+"    endif
+"    quit
+"endfunction
+
+" would be nice if Startify opened in new tabs / windows see
+" https://github.com/mhinz/vim-startify/issues/139
+" au! WinNew * Startify
+
+function! Goyo_before()
+    let b:quitting = 0
+    let b:quitting_bang = 0
+    autocmd QuitPre <buffer> let b:quitting = 1
+    cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
 endfunction
+
+function! Goyo_after()
+    " Quit Vim if this is the only remaining buffer
+    if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+        if b:quitting_bang
+            qa!
+        else
+            qa
+        endif
+    endif
+endfunction
+
+let g:goyo_callbacks = [function('Goyo_before'), function('Goyo_after')]
+
+let g:airline#extensions#whitespace#show_message = 0

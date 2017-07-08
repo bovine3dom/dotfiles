@@ -76,3 +76,6 @@
 [submodule ".vim/bundle/vim-startify"]
 	path = .vim/bundle/vim-startify
 	url = https://github.com/mhinz/vim-startify
+[submodule ".vim/bundle/yats.vim"]
+	path = .vim/bundle/yats.vim
+	url = https://github.com/HerringtonDarkholme/yats.vim
