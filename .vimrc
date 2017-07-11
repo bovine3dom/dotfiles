@@ -67,3 +67,54 @@ au BufWritePost * if getline(1) =~ "^#!" | execute "silent !chmod +x %" | endif
 " vim-pandoc settings
 let g:pandoc#modules#disabled = ["folding"]
 let g:pandoc#syntax#conceal#use = 0
+
+let g:startify_custom_header = [
+                                \ '                                                        ,,,           ',
+                                \ '                                                       (o o)          ',
+                                \ '----------------------------------------------------ooO-(_)-Ooo-------',
+                                \ '                              _                                 _ ___ ',
+                                \ '               __      _____ | |_     _ __   ___     __ _ _   _(_) _ \',
+                                \ '               \ \ /\ / / _ \| __|   | ''_ \ / _ \   / _` | | | | \// /',
+                                \ '                \ V  V / (_) | |_ _  | | | | (_) | | (_| | |_| | | \/ ',
+                                \ '                 \_/\_/ \___/ \__( ) |_| |_|\___/   \__, |\__,_|_| () ',
+                                \ '                                 |/                 |___/             ',
+                                \ ]
+
+
+
+
+" Quitting whether Goyo is active or not
+"ca wq :w<cr>:call Quit()<cr>
+"ca q :call Quit()<cr>
+"function! Quit()
+"    if exists('#goyo')
+"        Goyo
+"    endif
+"    quit
+"endfunction
+
+" would be nice if Startify opened in new tabs / windows see
+" https://github.com/mhinz/vim-startify/issues/139
+" au! WinNew * Startify
+
+function! Goyo_before()
+    let b:quitting = 0
+    let b:quitting_bang = 0
+    autocmd QuitPre <buffer> let b:quitting = 1
+    cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+endfunction
+
+function! Goyo_after()
+    " Quit Vim if this is the only remaining buffer
+    if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+        if b:quitting_bang
+            qa!
+        else
+            qa
+        endif
+    endif
+endfunction
+
+let g:goyo_callbacks = [function('Goyo_before'), function('Goyo_after')]
+
+let g:airline#extensions#whitespace#show_message = 0

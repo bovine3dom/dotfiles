@@ -70,3 +70,12 @@
 [submodule ".vim/bundle/vim-pandoc-syntax"]
 	path = .vim/bundle/vim-pandoc-syntax
 	url = https://github.com/vim-pandoc/vim-pandoc-syntax
+[submodule ".vim/bundle/julia-vim"]
+	path = .vim/bundle/julia-vim
+	url = https://github.com/JuliaEditorSupport/julia-vim
+[submodule ".vim/bundle/vim-startify"]
+	path = .vim/bundle/vim-startify
+	url = https://github.com/mhinz/vim-startify
+[submodule ".vim/bundle/yats.vim"]
+	path = .vim/bundle/yats.vim
+	url = https://github.com/HerringtonDarkholme/yats.vim
