@@ -1,3 +1,3 @@
 function fish_greeting
-	cowsay (fortune -s) | lolcat
+	fortune -s | cowsay -f stegosaurus.cow| lolcat
 end
