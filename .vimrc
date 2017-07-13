@@ -1,4 +1,41 @@
-execute pathogen#infect()
+" execute pathogen#infect() " moved from Pathogen to vim-plug
+
+" Install vim-plug if it isn't there already
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'https://github.com/junegunn/goyo.vim'
+Plug 'https://github.com/PotatoesMaster/i3-vim-syntax'
+Plug 'https://github.com/JuliaEditorSupport/julia-vim'
+Plug 'https://github.com/freitass/todo.txt-vim'
+Plug 'https://github.com/SirVer/ultisnips'
+Plug 'https://github.com/mbbill/undotree'
+Plug 'https://github.com/KabbAmine/vCoolor.vim'
+Plug 'https://github.com/vim-airline/vim-airline'
+Plug 'https://github.com/vim-airline/vim-airline-themes'
+Plug 'https://github.com/kchmck/vim-coffee-script'
+Plug 'https://github.com/tpope/vim-commentary'
+Plug 'https://github.com/dag/vim-fish'
+Plug 'https://github.com/tpope/vim-fugitive'
+Plug 'https://github.com/airblade/vim-gitgutter'
+Plug 'https://github.com/vim-pandoc/vim-pandoc'
+Plug 'https://github.com/vim-pandoc/vim-pandoc-syntax'
+Plug 'https://github.com/florentc/vim-pdfpc-syntax'
+Plug 'https://github.com/tpope/vim-sensible'
+Plug 'https://github.com/honza/vim-snippets'
+Plug 'https://github.com/mhinz/vim-startify'
+Plug 'https://github.com/tpope/vim-surround'
+Plug 'https://github.com/HerringtonDarkholme/yats.vim'
+
+
+call plug#end()
+
+" Type :PlugInstall to install a new plugin
 syntax on
 filetype plugin indent on
 

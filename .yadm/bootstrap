@@ -4,12 +4,16 @@
 # be run from within $HOME (assuming this is the root of your dotfiles)
 cd "$HOME"
 
-echo "Installing pathogen"
-mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
-echo "Init submodules"
-yadm submodule sync
-yadm submodule update --recursive --init
+# No need for this with vim-plug
+# echo "Installing pathogen"
+# mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+
+# echo "Init submodules"
+# yadm submodule sync
+# yadm submodule update --recursive --init
+echo "Update vim plugins"
+vim +PlugInstall +PlugUpdate +PlugUpgrade +qall
 
 echo "Update fish plugins"
 fish -c fisher up 
