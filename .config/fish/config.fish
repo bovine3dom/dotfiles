@@ -8,7 +8,7 @@ fzf_key_bindings
 . ~/.config/fish/functions/z.fish
 
 if status --is-login
-    set PATH $PATH /usr/bin /sbin ~/bin
+    set PATH $PATH /usr/bin /sbin ~/bin ~/.gem/ruby/2.4.0/bin
     if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
         exec startx -- -keeptty
     end

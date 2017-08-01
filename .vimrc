@@ -32,7 +32,8 @@ Plug 'https://github.com/mhinz/vim-startify'
 Plug 'https://github.com/tpope/vim-surround'
 Plug 'https://github.com/HerringtonDarkholme/yats.vim'
 Plug 'https://github.com/vim-syntastic/syntastic'
-
+Plug 'https://github.com/neomake/neomake'
+Plug 'https://github.com/zyedidia/julialint.vim'
 
 call plug#end()
 
