@@ -34,6 +34,9 @@ Plug 'https://github.com/HerringtonDarkholme/yats.vim'
 Plug 'https://github.com/vim-syntastic/syntastic'
 Plug 'https://github.com/neomake/neomake'
 Plug 'https://github.com/zyedidia/julialint.vim'
+Plug 'https://github.com/leafgarland/typescript-vim'
+Plug 'https://github.com/Quramy/tsuquyomi'
+Plug 'https://github.com/jaxbot/semantic-highlight.vim'
 
 call plug#end()
 
