@@ -177,3 +177,10 @@ autocmd FileType mail inoremap <CR> <ESC>gqqo
 " RFC 1855 says 65 characters
 set formatprg=par\ -w65\ -j1
 autocmd FileType mail set tw=0
+
+" Disable mad ^6 binding and map to ^]
+let g:tsuquyomi_disable_default_mappings = 1
+au FileType typescript nnoremap <C-]> <Plug>(TsuquyomiDefinition)
+
+" Tmux-style zoom
+nmap z :tabnew %<CR>
