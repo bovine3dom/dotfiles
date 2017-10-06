@@ -170,5 +170,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
+let g:tsuquyomi_disable_default_mappings = 1
+au FileType typescript nnoremap <C-]> <Plug>(TsuquyomiDefinition)
 
 nmap z :tabnew %<CR>
