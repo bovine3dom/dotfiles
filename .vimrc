@@ -170,3 +170,10 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
+
+
+" When writing emails, format the text nicely
+autocmd FileType mail inoremap <CR> <ESC>gqqo
+" RFC 1855 says 65 characters
+set formatprg=par\ -w65\ -j1
+autocmd FileType mail set tw=0
