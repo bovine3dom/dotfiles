@@ -37,6 +37,7 @@ Plug 'https://github.com/zyedidia/julialint.vim'
 Plug 'https://github.com/leafgarland/typescript-vim'
 Plug 'https://github.com/Quramy/tsuquyomi'
 Plug 'https://github.com/jaxbot/semantic-highlight.vim'
+Plug 'https://github.com/tpope/vim-rhubarb'
 
 call plug#end()
 
