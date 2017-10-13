@@ -7,7 +7,7 @@
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
-  exec startx
+    exec startx
 fi
 
 tmux-x-attach() {
