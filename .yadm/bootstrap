@@ -4,6 +4,9 @@
 # be run from within $HOME (assuming this is the root of your dotfiles)
 cd "$HOME"
 
+# Undo files for vim
+mkdir -p .undodir
+
 
 # No need for this with vim-plug
 # echo "Installing pathogen"
