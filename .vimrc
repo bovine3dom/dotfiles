@@ -31,8 +31,9 @@ Plug 'https://github.com/honza/vim-snippets'
 Plug 'https://github.com/mhinz/vim-startify'
 Plug 'https://github.com/tpope/vim-surround'
 Plug 'https://github.com/HerringtonDarkholme/yats.vim'
-Plug 'https://github.com/vim-syntastic/syntastic'
-Plug 'https://github.com/neomake/neomake'
+" Plug 'https://github.com/vim-syntastic/syntastic'
+Plug 'https://github.com/w0rp/ale.git'
+" Plug 'https://github.com/neomake/neomake'
 Plug 'https://github.com/zyedidia/julialint.vim'
 Plug 'https://github.com/leafgarland/typescript-vim'
 Plug 'https://github.com/Quramy/tsuquyomi'
@@ -182,6 +183,10 @@ autocmd FileType mail set tw=0
 " Disable mad ^6 binding and map to ^]
 let g:tsuquyomi_disable_default_mappings = 1
 au FileType typescript nnoremap <C-]> <Plug>(TsuquyomiDefinition)
+
+let g:ale_linters = {
+\   'typescript': ['tslint'],
+\}
 
 " Tmux-style zoom
 nmap z :tabnew %<CR>
