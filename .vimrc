@@ -30,15 +30,18 @@ Plug 'https://github.com/tpope/vim-sensible'
 Plug 'https://github.com/honza/vim-snippets'
 Plug 'https://github.com/mhinz/vim-startify'
 Plug 'https://github.com/tpope/vim-surround'
+Plug 'https://github.com/keith/investigate.vim'
 Plug 'https://github.com/HerringtonDarkholme/yats.vim'
 " Plug 'https://github.com/vim-syntastic/syntastic'
 Plug 'https://github.com/w0rp/ale.git'
 " Plug 'https://github.com/neomake/neomake'
 Plug 'https://github.com/zyedidia/julialint.vim'
 Plug 'https://github.com/leafgarland/typescript-vim'
-Plug 'https://github.com/Quramy/tsuquyomi'
+" Plug 'https://github.com/Quramy/tsuquyomi'
 Plug 'https://github.com/jaxbot/semantic-highlight.vim'
 Plug 'https://github.com/tpope/vim-rhubarb'
+Plug 'https://github.com/sheerun/vim-polyglot'
+
 
 call plug#end()
 
@@ -164,14 +167,14 @@ let g:goyo_callbacks = [function('Goyo_before'), function('Goyo_after')]
 let g:airline#extensions#whitespace#show_message = 0
 
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_javascript_checkers = ['eslint']
 
 
 " When writing emails, format the text nicely
@@ -190,3 +193,7 @@ let g:ale_linters = {
 
 " Tmux-style zoom
 nmap z :tabnew %<CR>
+
+set grepprg=rg\ --vimgrep
+let g:investigate_url_for_typescript="https://www.google.co.uk/search?safe=off&q=site:developer.mozilla.org+^s&btnI=1"
+let g:investigate_url_for_julia="https://www.google.co.uk/search?safe=off&q=site:docs.julialang.org/docs/en/stable+^s&btnI=1"
