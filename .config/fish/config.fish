@@ -14,5 +14,7 @@ if status --is-login
     end
 end
 
+set BROWSER /usr/bin/firefox
+
 keychain --quiet -Q --agents ssh ~/.ssh/*_rsa
 bass '. ~/.keychain/$HOSTNAME-sh'
