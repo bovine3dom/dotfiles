@@ -10,37 +10,63 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'https://github.com/junegunn/goyo.vim'
+" Distraction free mode for Markdown
+"
 Plug 'https://github.com/PotatoesMaster/i3-vim-syntax'
 Plug 'https://github.com/JuliaEditorSupport/julia-vim'
 Plug 'https://github.com/freitass/todo.txt-vim'
 Plug 'https://github.com/SirVer/ultisnips'
+
 Plug 'https://github.com/mbbill/undotree'
+" Undo history as a tree
+
 Plug 'https://github.com/KabbAmine/vCoolor.vim'
 Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'https://github.com/vim-airline/vim-airline-themes'
 Plug 'https://github.com/kchmck/vim-coffee-script'
+" Plug 'https://github.com/Quramy/tsuquyomi'
+
 Plug 'https://github.com/tpope/vim-commentary'
+" Comment stuff out with gcc
+
+
 Plug 'https://github.com/dag/vim-fish'
 Plug 'https://github.com/tpope/vim-fugitive'
 Plug 'https://github.com/airblade/vim-gitgutter'
+" Displays changes in git in the margin
+
 Plug 'https://github.com/vim-pandoc/vim-pandoc'
 Plug 'https://github.com/vim-pandoc/vim-pandoc-syntax'
 Plug 'https://github.com/florentc/vim-pdfpc-syntax'
+
 Plug 'https://github.com/tpope/vim-sensible'
+" Sensible vim defaults
+
 Plug 'https://github.com/honza/vim-snippets'
+
 Plug 'https://github.com/mhinz/vim-startify'
+" Handy start page with recently used files
+
 Plug 'https://github.com/tpope/vim-surround'
+
 Plug 'https://github.com/keith/investigate.vim'
+" Run commands based on what's under cursor and filetype with gK
+
 Plug 'https://github.com/HerringtonDarkholme/yats.vim'
-" Plug 'https://github.com/vim-syntastic/syntastic'
+
 Plug 'https://github.com/w0rp/ale.git'
-" Plug 'https://github.com/neomake/neomake'
+" Async linting
+
 Plug 'https://github.com/zyedidia/julialint.vim'
 Plug 'https://github.com/leafgarland/typescript-vim'
-" Plug 'https://github.com/Quramy/tsuquyomi'
 Plug 'https://github.com/jaxbot/semantic-highlight.vim'
 Plug 'https://github.com/tpope/vim-rhubarb'
+
 Plug 'https://github.com/sheerun/vim-polyglot'
+" Syntax highlighting for most languages
+
+Plug 'https://github.com/skywind3000/asyncrun.vim'
+" Swap ! for AsyncRun; view output with :cw (quickfix)
 
 
 call plug#end()
@@ -188,7 +214,7 @@ let g:tsuquyomi_disable_default_mappings = 1
 au FileType typescript nnoremap <C-]> <Plug>(TsuquyomiDefinition)
 
 let g:ale_linters = {
-\   'typescript': ['tslint'],
+\   'typescript': ['tsserver'],
 \}
 
 " Tmux-style zoom
