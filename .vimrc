@@ -223,3 +223,5 @@ nmap z :tabnew %<CR>
 set grepprg=rg\ --vimgrep
 let g:investigate_url_for_typescript="https://www.google.co.uk/search?safe=off&q=site:developer.mozilla.org+^s&btnI=1"
 let g:investigate_url_for_julia="https://www.google.co.uk/search?safe=off&q=site:docs.julialang.org/docs/en/stable+^s&btnI=1"
+
+noremap q: :q
