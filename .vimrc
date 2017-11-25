@@ -15,6 +15,8 @@ Plug 'https://github.com/junegunn/goyo.vim'
 Plug 'https://github.com/PotatoesMaster/i3-vim-syntax'
 Plug 'https://github.com/JuliaEditorSupport/julia-vim'
 Plug 'https://github.com/freitass/todo.txt-vim'
+Plug 'https://github.com/flazz/vim-colorschemes'
+" Plug 'https://github.com/felixhummel/setcolors.vim'
 Plug 'https://github.com/SirVer/ultisnips'
 
 Plug 'https://github.com/mbbill/undotree'
@@ -225,3 +227,6 @@ let g:investigate_url_for_typescript="https://www.google.co.uk/search?safe=off&q
 let g:investigate_url_for_julia="https://www.google.co.uk/search?safe=off&q=site:docs.julialang.org/docs/en/stable+^s&btnI=1"
 
 noremap q: :q
+
+let g:ale_lint_on_text_changed="normal"
+let g:ale_lint_on_insert_leave=1

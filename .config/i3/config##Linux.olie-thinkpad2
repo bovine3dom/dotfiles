@@ -1,4 +1,4 @@
-exec --no-startup-id feh --bg-fill --randomize ~/Pictures/Wallpapers/actuallynice/
+exec --no-startup-id feh --bg-fill --randomize ~/Pictures/Wallpapers/earth/
 #exec --no-startup-id curl http://placekitten.com/1366/768 | feh --bg-scale -
 exec --no-startup-id nm-applet
 exec --no-startup-id dropbox

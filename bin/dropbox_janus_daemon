@@ -1,4 +1,4 @@
 #!/bin/fish
-dropboxd&
+dropbox&
 mkdir -p ~/.dropbox-work
-env HOME=$HOME/.dropbox-work dropboxd&
+env HOME=$HOME/.dropbox-work dropbox&
