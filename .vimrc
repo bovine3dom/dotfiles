@@ -228,3 +228,6 @@ noremap q: :q
 
 let g:ale_lint_on_text_changed="normal"
 let g:ale_lint_on_insert_leave=1
+
+// cI to easily rename all occurences of word under cursor in document
+nnoremap cI *:%s//
