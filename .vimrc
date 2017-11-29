@@ -54,13 +54,10 @@ Plug 'https://github.com/tpope/vim-surround'
 Plug 'https://github.com/keith/investigate.vim'
 " Run commands based on what's under cursor and filetype with gK
 
-Plug 'https://github.com/HerringtonDarkholme/yats.vim'
-
 Plug 'https://github.com/w0rp/ale.git'
 " Async linting
 
 Plug 'https://github.com/zyedidia/julialint.vim'
-Plug 'https://github.com/leafgarland/typescript-vim'
 Plug 'https://github.com/jaxbot/semantic-highlight.vim'
 Plug 'https://github.com/tpope/vim-rhubarb'
 
@@ -70,6 +67,7 @@ Plug 'https://github.com/sheerun/vim-polyglot'
 Plug 'https://github.com/skywind3000/asyncrun.vim'
 " Swap ! for AsyncRun; view output with :cw (quickfix)
 
+Plug 'https://github.com/leafgarland/typescript-vim'
 
 call plug#end()
 
