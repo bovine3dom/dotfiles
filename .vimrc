@@ -69,6 +69,10 @@ Plug 'https://github.com/skywind3000/asyncrun.vim'
 
 Plug 'https://github.com/leafgarland/typescript-vim'
 
+Plug 'https://github.com/easymotion/vim-easymotion'
+Plug 'https://github.com/haya14busa/incsearch.vim'
+Plug 'https://github.com/haya14busa/incsearch-fuzzy.vim'
+
 call plug#end()
 
 " Type :PlugInstall to install a new plugin
@@ -237,3 +241,14 @@ set splitright
 
 " cI to easily rename all occurences of word under cursor in document
 nnoremap cI *:%s//
+
+" remap easymotion to ,
+map <Leader> <Plug>(easymotion-prefix)
+
+" incsearch improvements
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+map z/ <Plug>(incsearch-fuzzy-/)
+map z? <Plug>(incsearch-fuzzy-?)
+map zg/ <Plug>(incsearch-fuzzy-stay)
