@@ -231,3 +231,6 @@ let g:ale_lint_on_insert_leave=1
 
 " cI to easily rename all occurences of word under cursor in document
 nnoremap cI *:%s//
+
+" D,C go to end of line. Y yanks whole line. Not any more.
+nnoremap Y y$
