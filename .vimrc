@@ -69,6 +69,10 @@ Plug 'https://github.com/skywind3000/asyncrun.vim'
 
 Plug 'https://github.com/leafgarland/typescript-vim'
 
+Plug 'https://github.com/easymotion/vim-easymotion'
+Plug 'https://github.com/haya14busa/incsearch.vim'
+Plug 'https://github.com/haya14busa/incsearch-fuzzy.vim'
+
 call plug#end()
 
 " Type :PlugInstall to install a new plugin
@@ -229,8 +233,25 @@ noremap q: :q
 let g:ale_lint_on_text_changed="normal"
 let g:ale_lint_on_insert_leave=1
 
+" stop annoying beeps
+set visualbell
+
+" open vnew windows to the right, as makes obvious sense
+set splitright
+
 " cI to easily rename all occurences of word under cursor in document
 nnoremap cI *:%s//
 
 " D,C go to end of line. Y yanks whole line. Not any more.
 nnoremap Y y$
+
+" remap easymotion to ,
+map <Leader> <Plug>(easymotion-prefix)
+
+" incsearch improvements
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+map z/ <Plug>(incsearch-fuzzy-/)
+map z? <Plug>(incsearch-fuzzy-?)
+map zg/ <Plug>(incsearch-fuzzy-stay)
