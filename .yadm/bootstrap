@@ -26,3 +26,9 @@ vim +PlugInstall +PlugUpdate +PlugUpgrade +qall
 
 echo "Update fish plugins"
 fish -c fisher up 
+
+# Fish abbreviations
+fish -c "abbr g git
+abbr gs 'git status'
+abbr ga 'git add'
+abbr ta 'tmux attach; or tmux'"
