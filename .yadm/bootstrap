@@ -31,4 +31,5 @@ fish -c fisher up
 fish -c "abbr g git
 abbr gs 'git status'
 abbr ga 'git add'
+abbr gcm 'git checkout master'
 abbr ta 'tmux attach; or tmux'"
