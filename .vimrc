@@ -234,7 +234,6 @@ let g:ale_lint_on_text_changed="normal"
 let g:ale_lint_on_insert_leave=1
 
 " stop annoying beeps
-set visualbell
 
 " open vnew windows to the right, as makes obvious sense
 set splitright
