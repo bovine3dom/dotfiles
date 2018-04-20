@@ -8,13 +8,19 @@ cd "$HOME"
 mkdir -p .undodir
 
 
-# No need for this with vim-plug
-# echo "Installing pathogen"
-# mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-
-# echo "Init submodules"
-# yadm submodule sync
-# yadm submodule update --recursive --init
+echo "Install programmes"
+if [ -z "$DISPLAY" ]; then
+    toguiornotgui="vim";
+else
+    toguiornotgui="gvim firefox gnome-terminal";
+fi
+fonts="noto-fonts ttf-iosevka-term"
+web="elinks surfraw dnsutils wget curl openssh npm"
+terminal="tmux screen tldr fish fzf keychain"
+code="python python-pip python2 python2-pip julia git"
+sudo pacman --needed -Sy pacaur
+pacaur --needed -Sy $fonts $web $terminal $code $toguiornotgui
+read
 echo "Update vim plugins"
 vim +PlugInstall +PlugUpdate +PlugUpgrade +qall
 
