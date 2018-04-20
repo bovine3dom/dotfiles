@@ -121,7 +121,7 @@ let g:pandoc#folding#level = 4
 
 set tildeop
 
-set wildmode=longest,list,full
+set wildmode=full
 
 set wildmenu
 
