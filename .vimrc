@@ -54,16 +54,13 @@ Plug 'https://github.com/tpope/vim-surround'
 Plug 'https://github.com/keith/investigate.vim'
 " Run commands based on what's under cursor and filetype with gK
 
-Plug 'https://github.com/HerringtonDarkholme/yats.vim'
 
 Plug 'https://github.com/w0rp/ale.git', {'for': 'typescript'}
 " Async linting
 
-" Load neomake and julialint only for Julia
 Plug 'https://github.com/neomake/neomake', {'for': 'julia'}
 Plug 'https://github.com/zyedidia/julialint.vim', {'for': 'julia'}
 
-Plug 'https://github.com/leafgarland/typescript-vim'
 Plug 'https://github.com/jaxbot/semantic-highlight.vim'
 Plug 'https://github.com/tpope/vim-rhubarb'
 
@@ -73,6 +70,11 @@ Plug 'https://github.com/sheerun/vim-polyglot'
 Plug 'https://github.com/skywind3000/asyncrun.vim'
 " Swap ! for AsyncRun; view output with :cw (quickfix)
 
+Plug 'https://github.com/leafgarland/typescript-vim'
+
+Plug 'https://github.com/easymotion/vim-easymotion'
+Plug 'https://github.com/haya14busa/incsearch.vim'
+Plug 'https://github.com/haya14busa/incsearch-fuzzy.vim'
 
 call plug#end()
 
@@ -122,7 +124,7 @@ let g:pandoc#folding#level = 4
 
 set tildeop
 
-set wildmode=longest,list,full
+set wildmode=full
 
 set wildmenu
 
@@ -233,3 +235,25 @@ noremap q: :q
 
 let g:ale_lint_on_text_changed="normal"
 let g:ale_lint_on_insert_leave=1
+
+" stop annoying beeps
+
+" open vnew windows to the right, as makes obvious sense
+set splitright
+
+" cI to easily rename all occurences of word under cursor in document
+nnoremap cI *:%s//
+
+" D,C go to end of line. Y yanks whole line. Not any more.
+nnoremap Y y$
+
+" remap easymotion to ,
+map <Leader> <Plug>(easymotion-prefix)
+
+" incsearch improvements
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+map z/ <Plug>(incsearch-fuzzy-/)
+map z? <Plug>(incsearch-fuzzy-?)
+map zg/ <Plug>(incsearch-fuzzy-stay)
