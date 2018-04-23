@@ -56,10 +56,13 @@ Plug 'https://github.com/keith/investigate.vim'
 
 Plug 'https://github.com/HerringtonDarkholme/yats.vim'
 
-Plug 'https://github.com/w0rp/ale.git'
+Plug 'https://github.com/w0rp/ale.git', {'for': 'typescript'}
 " Async linting
 
-Plug 'https://github.com/zyedidia/julialint.vim'
+" Load neomake and julialint only for Julia
+Plug 'https://github.com/neomake/neomake', {'for': 'julia'}
+Plug 'https://github.com/zyedidia/julialint.vim', {'for': 'julia'}
+
 Plug 'https://github.com/leafgarland/typescript-vim'
 Plug 'https://github.com/jaxbot/semantic-highlight.vim'
 Plug 'https://github.com/tpope/vim-rhubarb'
