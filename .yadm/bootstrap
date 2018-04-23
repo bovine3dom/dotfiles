@@ -32,4 +32,5 @@ fish -c "abbr g git
 abbr gs 'git status'
 abbr ga 'git add'
 abbr gcm 'git checkout master'
+abbr nrb 'npm run build'
 abbr ta 'tmux attach; or tmux'"
