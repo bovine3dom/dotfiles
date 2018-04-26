@@ -55,7 +55,7 @@ Plug 'https://github.com/keith/investigate.vim'
 " Run commands based on what's under cursor and filetype with gK
 
 
-Plug 'https://github.com/w0rp/ale.git', {'for': 'typescript'}
+Plug 'https://github.com/w0rp/ale.git', {'for': ['typescript', 'python']}
 " Async linting
 
 Plug 'https://github.com/neomake/neomake', {'for': 'julia'}
@@ -75,6 +75,10 @@ Plug 'https://github.com/leafgarland/typescript-vim'
 Plug 'https://github.com/easymotion/vim-easymotion'
 Plug 'https://github.com/haya14busa/incsearch.vim'
 Plug 'https://github.com/haya14busa/incsearch-fuzzy.vim'
+
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
 
 call plug#end()
 
@@ -257,3 +261,11 @@ map g/ <Plug>(incsearch-stay)
 map z/ <Plug>(incsearch-fuzzy-/)
 map z? <Plug>(incsearch-fuzzy-?)
 map zg/ <Plug>(incsearch-fuzzy-stay)
+
+let g:ale_fixers = {
+ \   'python': [
+ \       'yapf',
+ \   ],
+ \}
+
+let g:deoplete#enable_at_startup = 1
