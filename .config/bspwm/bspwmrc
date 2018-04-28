@@ -9,9 +9,7 @@ xset -dpms&
 autocutsel&
 autocutsel -s PRIMARY&
 xrandr --output VGA-1 --dpi 160&
-MONITOR=VGA-1 polybar hidpibspwm&
 
-feh --bg-fill --randomize /home/olie/Pictures/Wallpapers&
 
 
 bspc config border_width         2
@@ -31,3 +29,5 @@ bspc config focus_follows_pointer true
 # bspc rule -a Screenkey manage=off
 
 bspc monitor -d I II III IV V VI VII VIII IX X
+sleep 0.5 && feh --bg-fill --randomize /home/olie/Pictures/Wallpapers&
+sleep 0.5 && MONITOR=VGA-1 polybar hidpibspwm&
