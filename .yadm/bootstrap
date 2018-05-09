@@ -38,5 +38,4 @@ abbr grc 'git rebase --continue'
 abbr nrb 'npm run build'
 abbr ts 'task sync'
 abbr t 'task'
-abbr ta 'task add'
 abbr ta 'tmux attach; or tmux'"
