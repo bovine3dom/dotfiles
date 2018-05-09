@@ -31,6 +31,12 @@ fish -c fisher up
 fish -c "abbr g git
 abbr gs 'git status'
 abbr ga 'git add'
+abbr gp 'git pull'
 abbr gcm 'git checkout master'
+abbr gc 'git checkout'
+abbr grc 'git rebase --continue'
 abbr nrb 'npm run build'
+abbr ts 'task sync'
+abbr t 'task'
+abbr ta 'task add'
 abbr ta 'tmux attach; or tmux'"
