@@ -58,8 +58,11 @@ Plug 'https://github.com/keith/investigate.vim'
 Plug 'https://github.com/w0rp/ale.git', {'for': ['typescript', 'python']}
 " Async linting
 
-Plug 'https://github.com/neomake/neomake', {'for': 'julia'}
-Plug 'https://github.com/zyedidia/julialint.vim', {'for': 'julia'}
+" Plug 'https://github.com/neomake/neomake', {'for': 'julia'}
+" Plug 'https://github.com/zyedidia/julialint.vim', {'for': 'julia'}
+Plug 'https://github.com/JuliaEditorSupport/julia-vim', {'for': 'julia'}
+Plug 'JuliaEditorSupport/julia-vim', {'for': 'julia'}
+Plug 'autozimu/LanguageClient-neovim', {'for' : ['julia', 'typescript', 'javascript'],'branch': 'next', 'do': 'bash install.sh'}
 
 Plug 'https://github.com/jaxbot/semantic-highlight.vim'
 Plug 'https://github.com/tpope/vim-rhubarb'
@@ -79,6 +82,8 @@ Plug 'https://github.com/haya14busa/incsearch-fuzzy.vim'
 Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
+
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
@@ -233,7 +238,7 @@ nmap z :tabnew %<CR>
 
 set grepprg=rg\ --vimgrep
 let g:investigate_url_for_typescript="https://www.google.co.uk/search?safe=off&q=site:developer.mozilla.org+^s&btnI=1"
-let g:investigate_url_for_julia="https://www.google.co.uk/search?safe=off&q=site:docs.julialang.org/docs/en/stable+^s&btnI=1"
+let g:investigate_url_for_julia="https://www.google.co.uk/search?safe=off&q=site:docs.julialang.org/en/stable+^s&btnI=1"
 
 noremap q: :q
 
@@ -269,3 +274,37 @@ let g:ale_fixers = {
  \}
 
 let g:deoplete#enable_at_startup = 1
+
+
+""" Julia stuff
+
+
+" julia
+let g:default_julia_version = '0.6'
+
+" language server
+let g:LanguageClient_autoStart = 1
+let g:LanguageClient_serverCommands = {
+\   'julia': ['julia', '--startup-file=no', '--history-file=no', '-e', '
+\       using LanguageServer;
+\       server = LanguageServer.LanguageServerInstance(STDIN, STDOUT, false);
+\       server.runlinter = true;
+\       run(server);
+\   '],
+\   'typescript': ['javascript-typescript-stdio'],
+\   'javascript': ['javascript-typescript-stdio'],
+\ }
+
+" Make LanguageClient a bit more CPU friendly
+let g:LanguageClient_changeThrottle = 2
+
+autocmd FileType typescript,javascript,julia nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+autocmd FileType typescript,javascript,julia nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+autocmd FileType typescript,javascript,julia nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
+autocmd FileType typescript,javascript,julia nnoremap <silent> ;f :call LanguageClient_textDocument_documentSymbol()<CR>
+
+" fzf binds
+nnoremap <silent> ;go :GFiles<CR>
+nnoremap <silent> ;o :Files<CR>
+nnoremap <silent> ;c :BCommits<CR>
+
