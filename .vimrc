@@ -298,6 +298,7 @@ let g:LanguageClient_serverCommands = {
 " Make LanguageClient a bit more CPU friendly
 let g:LanguageClient_changeThrottle = 2
 
+" needs npm module javascript-typescript-langserver and Julia package LanguageServer.jl
 autocmd FileType typescript,javascript,julia nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 autocmd FileType typescript,javascript,julia nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
 autocmd FileType typescript,javascript,julia nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
