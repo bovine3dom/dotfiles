@@ -18,7 +18,7 @@ gaps outer 0
 # exec --no-startup-id setxkbmap gb
 # exec --no-startup-id setxkbmap -option caps:ctrl_modifier
 exec --no-startup-id xcape -e "Caps_Lock=Escape"
-exec --no-startup-id dropbox
+exec --no-startup-id ~/bin/dropbox_janus_daemon
 exec --no-startup-id xset -dpms
 
 # exec --no-startup-id keepass
