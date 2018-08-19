@@ -303,6 +303,7 @@ autocmd FileType typescript,javascript,julia nnoremap <silent> K :call LanguageC
 autocmd FileType typescript,javascript,julia nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
 autocmd FileType typescript,javascript,julia nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
 autocmd FileType typescript,javascript,julia nnoremap <silent> ;f :call LanguageClient_textDocument_documentSymbol()<CR>
+au BufRead,BufNewFile *.tex	set spell
 
 " fzf binds
 nnoremap <silent> ;go :GFiles<CR>
