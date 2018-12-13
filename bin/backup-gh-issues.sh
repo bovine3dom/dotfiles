@@ -1,0 +1,36 @@
+#!/bin/bash
+#Description: Backup github issues for a repository to plain text files for offline reading
+#License: WTFPL (http://www.wtfpl.net/txt/copying/)
+#Dependencies: ghi "https://github.com/stephencelis/ghi"
+#Usage: backup-gh-issues.sh [--closed] username repository
+set -e
+
+if [ "$1" == "--closed" ]
+    then closedissues="true"
+    shift
+fi
+
+ghuser="$1"
+ghrepo="$2"
+
+if [ "$ghuser" == "" -o "$ghrepo" == "" ]
+    then echo "Usage: backup-gh-issues.sh [--closed] username repository"; exit 1
+fi
+
+### Backup open issues
+ghi list -- "$ghuser"/"$ghrepo" | tee "$ghuser-$ghrepo-issues.md"
+issues=$(cat "$ghuser-$ghrepo-issues.md" | awk -F" *" '{print $2}' | egrep -v '^[A-Z|a-z]')
+for i in $issues; do ghi show $i -- "$ghuser"/"$ghrepo" | tee "$ghuser-$ghrepo-issue-$i.md"; done
+
+
+### Backup closed issues
+if [ "$closedissues" == "true" ]
+then
+    if [ ! -d closed ]
+        then mkdir closed
+    fi
+
+    ghi list -s closed -- "$ghuser"/"$ghrepo" | tee "closed/$ghuser-$ghrepo-issues.md"
+    issues=$(cat "closed/$ghuser-$ghrepo-issues.md" | awk -F" *" '{print $2}' | egrep -v '^[A-Z|a-z]')
+    for i in $issues; do ghi show $i -- "$ghuser"/"$ghrepo" | tee "closed/$ghuser-$ghrepo-issue-$i.md"; done
+fi
