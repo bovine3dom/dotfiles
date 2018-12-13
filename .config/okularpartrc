@@ -16,5 +16,6 @@ ShowBottomBar=false
 ShowLeftPanel=false
 
 [PageView]
+MouseMode=RectSelect
 ShowScrollBars=false
 ViewContinuous=false
