@@ -1,23 +1,24 @@
 #! /bin/sh
 
 sxhkd &
-/usr/bin/VBoxClient-all &
 setxkbmap gb -option caps:ctrl_modifier&
 xcape -e "Caps_Lock=Escape"&
 dropbox&
 xset -dpms&
 autocutsel&
 autocutsel -s PRIMARY&
-xrandr --output VGA-1 --dpi 160&
+xsetroot -cursor_name left_ptr
 
 
 
-bspc config border_width         2
-bspc config window_gap          20
+bspc config border_width         1
+bspc config window_gap           0
 
 bspc config split_ratio          0.50
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
+
+# Leave a gap for polybar
 
 # Focus follows mouse
 bspc config focus_follows_pointer true
@@ -29,5 +30,5 @@ bspc config focus_follows_pointer true
 # bspc rule -a Screenkey manage=off
 
 bspc monitor -d I II III IV V VI VII VIII IX X
-sleep 0.5 && feh --bg-fill --randomize /home/olie/Pictures/Wallpapers&
-sleep 0.5 && MONITOR=VGA-1 polybar hidpibspwm&
+sleep 0.5 && feh --bg-fill --randomize /home/olie/Pictures/Wallpapers/earth/&
+sleep 0.5 && polybar examplebsp
