@@ -85,6 +85,10 @@ Plug 'roxma/vim-hug-neovim-rpc'
 
 Plug 'junegunn/fzf.vim'
 
+Plug 'https://github.com/whiteinge/diffconflicts' " Invoke with :DiffConflicts on a file with conflict markers
+
+Plug 'https://github.com/jremmen/vim-ripgrep' " Invoke with :Rg
+
 call plug#end()
 
 " Type :PlugInstall to install a new plugin
