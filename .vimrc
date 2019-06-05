@@ -310,3 +310,4 @@ nnoremap <silent> ;go :GFiles<CR>
 nnoremap <silent> ;o :Files<CR>
 nnoremap <silent> ;c :BCommits<CR>
 
+let g:gitgutter_diff_base = 'master'
