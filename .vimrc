@@ -89,6 +89,10 @@ Plug 'https://github.com/whiteinge/diffconflicts' " Invoke with :DiffConflicts o
 
 Plug 'https://github.com/jremmen/vim-ripgrep' " Invoke with :Rg
 
+Plug 'https://github.com/ruanyl/vim-gh-line' " Copy line number to clipboard
+
+Plug 'https://github.com/habamax/vim-sendtoterm' " ,t sends selected lines to terminal (open term with :vert term)
+
 call plug#end()
 
 " Type :PlugInstall to install a new plugin
@@ -315,3 +319,5 @@ nnoremap <silent> ;o :Files<CR>
 nnoremap <silent> ;c :BCommits<CR>
 
 let g:gitgutter_diff_base = 'master'
+
+let g:gh_open_command = 'fn() { echo "$@" | xclip -selection clipboard; }; fn '
