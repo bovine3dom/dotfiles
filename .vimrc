@@ -9,6 +9,8 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'editorconfig/editorconfig-vim'
+
 Plug 'https://github.com/junegunn/goyo.vim'
 " Distraction free mode for Markdown
 "
@@ -61,8 +63,10 @@ Plug 'https://github.com/w0rp/ale.git', {'for': ['typescript', 'python']}
 " Plug 'https://github.com/neomake/neomake', {'for': 'julia'}
 " Plug 'https://github.com/zyedidia/julialint.vim', {'for': 'julia'}
 Plug 'https://github.com/JuliaEditorSupport/julia-vim', {'for': 'julia'}
+let g:julia_indent_align_brackets = 0
 Plug 'JuliaEditorSupport/julia-vim', {'for': 'julia'}
-Plug 'autozimu/LanguageClient-neovim', {'for' : ['julia', 'typescript', 'javascript'],'branch': 'next', 'do': 'bash install.sh'}
+Plug 'autozimu/LanguageClient-neovim', {'for' : ['typescript', 'javascript'],'branch': 'next', 'do': 'bash install.sh'}
+" Plug 'autozimu/LanguageClient-neovim', {'for' : ['julia', 'typescript', 'javascript'],'branch': 'next', 'do': 'bash install.sh'}
 
 Plug 'https://github.com/jaxbot/semantic-highlight.vim'
 Plug 'https://github.com/tpope/vim-rhubarb'
@@ -92,6 +96,14 @@ Plug 'https://github.com/jremmen/vim-ripgrep' " Invoke with :Rg
 Plug 'https://github.com/ruanyl/vim-gh-line' " Copy line number to clipboard
 
 Plug 'https://github.com/habamax/vim-sendtoterm' " ,t sends selected lines to terminal (open term with :vert term)
+
+
+Plug 'BurntSushi/ripgrep' " req for neuron.vim
+Plug 'ihsanturk/neuron.vim'
+
+Plug 'github/copilot.vim'
+
+Plug 'Exafunction/codeium.vim', { 'branch': 'main' } " run :Codeium Auth to get started, :Codeium Chat
 
 call plug#end()
 
@@ -151,10 +163,13 @@ set mouse=a
 
 set noshowmode
 
+set foldmethod=marker " {{{ and }}} become folds, open/close with zm / zr
+
 let g:goyo_width = "90%" 
 let g:goyo_height = "95%"
 
-au BufRead,BufNewFile *.md		set syntax=markdown  | set spell | set norelativenumber | set nonumber | Goyo | set showmode
+" au BufRead,BufNewFile *.md		set syntax=markdown  | set spell | set norelativenumber | set nonumber | Goyo | set showmode
+" au BufRead,BufNewFile *.md		set syntax=markdown  | set spell
 
 autocmd BufRead,BufNewFile ~/Dropbox/diary* set syntax=markdown  | set spell 
 
