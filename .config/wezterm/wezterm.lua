@@ -19,4 +19,6 @@ config.window_padding = {
     bottom = 0,
 }
 
+config.default_prog = { "tmux" }
+
 return config
