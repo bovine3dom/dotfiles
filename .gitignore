@@ -1,3 +1,24 @@
-# Vim stuff
+# Editor state and downloaded dependencies
 *.swp
+.vim/.netrwhist
+.vim/autoload/
+.vim/plugged/
 
+# Generated application state
+.ipython/profile_default/history.sqlite
+.ipython/profile_default/startup/
+.jupyter/
+.config/polybar/config
+
+# Fisher installs plugins from fish_plugins into these paths.
+.config/fish/completions/
+.config/fish/conf.d/
+.config/fish/fish_variables
+.config/fish/fishd.*
+.config/fish/functions/__*.fish
+.config/fish/functions/__*.py
+.config/fish/functions/_*.fish
+.config/fish/functions/bass.fish
+.config/fish/functions/fisher.fish
+.config/fish/functions/nvm.fish
+.config/fish/functions/z.fish

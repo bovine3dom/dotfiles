@@ -1,46 +1,71 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# Todo:
-# install yay
-# give choice for gui
+set -euo pipefail
 
-# Because Git submodule commands cannot operate without a work tree, they must
-# be run from within $HOME (assuming this is the root of your dotfiles)
-cd "$HOME"
+if [[ $(uname -s) != Linux || ! -x /usr/bin/pacman ]]; then
+  printf 'This bootstrap currently supports Arch Linux only.\n' >&2
+  exit 1
+fi
 
-# Undo files for vim
-mkdir -p .undodir
+packages=(
+  bat
+  bspwm
+  curl
+  difftastic
+  elinks
+  feh
+  firefox
+  fish
+  fisher
+  fontconfig
+  fzf
+  git
+  git-lfs
+  glances
+  gnupg
+  i3-wm
+  julia
+  keychain
+  neovim
+  noto-fonts
+  npm
+  openssh
+  polybar
+  python
+  python-pip
+  ripgrep
+  surfraw
+  sxhkd
+  task
+  tmux
+  ttf-liberation
+  ttf-opensans
+  vim
+  wget
+  xdotool
+  xorg-server
+  xorg-xinit
+  xorg-xrandr
+  xorg-xset
+  yadm
+)
 
+sudo pacman -Syu --needed "${packages[@]}"
 
-echo "Install programmes"
-#if [ -z "$DISPLAY" ]; then
-#    toguiornotgui="vim";
-#else
-    toguiornotgui="gvim firefox gnome-terminal";
-#fi
-fonts="noto-fonts ttf-iosevka-term"
-web="elinks surfraw dnsutils wget curl openssh npm"
-terminal="tmux screen tldr fish fzf keychain neovim"
-code="python python-pip python2 python2-pip julia git python-neovim diff-so-fancy"
-#sudo pacman --needed -Sy pacaur
-yay --needed -Sy $fonts $web $terminal $code $toguiornotgui
-read
-echo "Update vim plugins"
-vim +PlugInstall +PlugUpdate +PlugUpgrade +qall
+if command -v paru >/dev/null; then
+  paru -S --needed ttf-iosevka-term
+else
+  printf 'paru is unavailable; skipping the Iosevka Term AUR package.\n' >&2
+fi
 
-echo "Update fish plugins"
-fish -c fisher
+mkdir -p "$HOME/.undodir" "$HOME/.vim/autoload"
 
-# Fish abbreviations
-fish -c "abbr g git
-abbr gs 'git status'
-abbr ga 'git add'
-abbr gp 'git pull'
-abbr gcm 'git checkout master'
-abbr gc 'git checkout'
-abbr grc 'git rebase --continue'
-abbr nrb 'yarn run build'
-abbr nrr 'yarn run run'
-abbr ts 'task sync'
-abbr t 'task'
-abbr ta 'tmux attach; or tmux'"
+plug="$HOME/.vim/autoload/plug.vim"
+if [[ ! -f $plug ]]; then
+  curl --fail --location \
+    https://raw.githubusercontent.com/junegunn/vim-plug/0.14.0/plug.vim \
+    --output "$plug"
+fi
+
+fish -c 'fisher update'
+vim +"PlugInstall --sync" +qa

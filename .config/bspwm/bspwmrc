@@ -4,7 +4,7 @@
 # xrandr --output HDMI-1 --auto --left-of DP-0 --rotate left
 xrandr --output HDMI-1 --auto --primary --rotate normal
 xrandr --output DP-0 --auto --right-of HDMI-1 --rotate left
-$HOME/bin/fix_internet.sh
+"$HOME/bin/fix_internet.sh"
 
 SXHKD_SHELL=/bin/sh sxhkd &
 dropbox&
@@ -38,7 +38,7 @@ bspc config pointer_follows_focus false
 # bspc rule -a Screenkey manage=off
 
 
-sleep 0.5 && feh --bg-fill --randomize /home/olie/Pictures/Earthpapers/&
+sleep 0.5 && feh --bg-fill --randomize "$HOME/Pictures/Earthpapers/"&
 # Single monitor setup
 #bspc monitor HDMI-1 -d 1 2 3 4 5 6 7 8 9 10
 
