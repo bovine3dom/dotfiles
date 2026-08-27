@@ -20,5 +20,6 @@
 .config/fish/functions/_*.fish
 .config/fish/functions/bass.fish
 .config/fish/functions/fisher.fish
+.config/fish/functions/fzf_configure_bindings.fish
 .config/fish/functions/nvm.fish
 .config/fish/functions/z.fish
