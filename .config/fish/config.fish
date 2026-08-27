@@ -19,13 +19,14 @@ abbr -a t task
 abbr -a ta 'tmux attach; or tmux'
 abbr -a ts 'task sync'
 
-if status is-interactive; and type -q keychain; and type -q bass
+if status is-login; and type -q keychain
     set -l keys $HOME/.ssh/*_rsa
     test -f $HOME/.ssh/propbi; and set -a keys $HOME/.ssh/propbi
 
     if test (count $keys) -gt 0
         keychain --quiet -Q $keys
-        set -l keychain_env $HOME/.keychain/(hostname)-sh
-        test -r $keychain_env; and bass source $keychain_env
     end
 end
+
+set -l keychain_env $HOME/.keychain/(hostname)-fish
+test -r $keychain_env; and source $keychain_env
