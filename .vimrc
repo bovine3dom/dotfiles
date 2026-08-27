@@ -65,7 +65,8 @@ Plug 'https://github.com/w0rp/ale.git', {'for': ['typescript', 'python']}
 Plug 'https://github.com/JuliaEditorSupport/julia-vim', {'for': 'julia'}
 let g:julia_indent_align_brackets = 0
 Plug 'JuliaEditorSupport/julia-vim', {'for': 'julia'}
-Plug 'autozimu/LanguageClient-neovim', {'for' : ['typescript', 'javascript'],'branch': 'next', 'do': 'bash install.sh'}
+Plug 'autozimu/LanguageClient-neovim', {'for' : ['typescript', 'javascript'],'do': 'bash install.sh'}
+
 " Plug 'autozimu/LanguageClient-neovim', {'for' : ['julia', 'typescript', 'javascript'],'branch': 'next', 'do': 'bash install.sh'}
 
 Plug 'https://github.com/jaxbot/semantic-highlight.vim'
@@ -101,7 +102,7 @@ Plug 'https://github.com/habamax/vim-sendtoterm' " ,t sends selected lines to te
 Plug 'BurntSushi/ripgrep' " req for neuron.vim
 Plug 'ihsanturk/neuron.vim'
 
-Plug 'github/copilot.vim'
+" Plug 'github/copilot.vim'
 
 Plug 'Exafunction/codeium.vim', { 'branch': 'main' } " run :Codeium Auth to get started, :Codeium Chat
 
@@ -314,12 +315,12 @@ let g:LanguageClient_serverCommands = {
 \       server.runlinter = true;
 \       run(server);
 \   '],
-\   'typescript': ['javascript-typescript-stdio'],
-\   'javascript': ['javascript-typescript-stdio'],
+\   'typescript': ['typescript-language-server', '--stdio'],
+\   'javascript': ['typescript-language-server', '--stdio'],
 \ }
 
 " Make LanguageClient a bit more CPU friendly
-let g:LanguageClient_changeThrottle = 2
+let g:LanguageClient_changeThrottle = 0.3
 
 " needs npm module javascript-typescript-langserver and Julia package LanguageServer.jl
 autocmd FileType typescript,javascript,julia nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>

@@ -1,13 +1,14 @@
 {
-  "load_extensions": {
-    "vim_binding/vim_binding": true
-  },
-  "Cell": {
-    "cm_config": {
-      "lineNumbers": false
+    "Notebook": {
+        "Header": false
+    },
+    "Cell": {
+        "cm_config": {
+            "lineNumbers": false
+        }
+    },
+    "load_extensions": {
+        "vim_binding/vim_binding": true,
+        "/home/olie/.local/share/jupyter/nbextensions/webio-jupyter-notebook.js": true
     }
-  },
-  "Notebook": {
-    "Header": false
-  }
 }

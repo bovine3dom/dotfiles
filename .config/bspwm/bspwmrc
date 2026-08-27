@@ -1,18 +1,22 @@
 #! /bin/sh
 
-sxhkd &
-setxkbmap gb -option caps:ctrl_modifier&
-xcape -e "Caps_Lock=Escape"&
+# xrandr --output DP-0 --auto --primary
+# xrandr --output HDMI-1 --auto --left-of DP-0 --rotate left
+xrandr --output HDMI-1 --auto --primary --rotate normal
+xrandr --output DP-0 --auto --right-of HDMI-1 --rotate left
+$HOME/bin/fix_internet.sh
+
+SXHKD_SHELL=/bin/sh sxhkd &
 dropbox&
-xset -dpms&
-autocutsel&
-autocutsel -s PRIMARY&
-xsetroot -cursor_name left_ptr
+xset -dpms
+xset s off
+# autocutsel&
+# autocutsel -s PRIMARY&
 
 
 
 bspc config border_width         1
-bspc config window_gap           0
+bspc config window_gap           20
 
 bspc config split_ratio          0.50
 bspc config borderless_monocle   true
@@ -22,6 +26,10 @@ bspc config gapless_monocle      true
 
 # Focus follows mouse
 bspc config focus_follows_pointer true
+bspc config pointer_follows_monitor true
+
+# This causes issues with Steam : (
+bspc config pointer_follows_focus false
 
 # bspc rule -a Gimp desktop='^8' state=floating follow=on
 # bspc rule -a Chromium desktop='^2'
@@ -29,6 +37,15 @@ bspc config focus_follows_pointer true
 # bspc rule -a Kupfer.py focus=on
 # bspc rule -a Screenkey manage=off
 
-bspc monitor -d I II III IV V VI VII VIII IX X
-sleep 0.5 && feh --bg-fill --randomize /home/olie/Pictures/Wallpapers/earth/&
-sleep 0.5 && polybar examplebsp
+
+sleep 0.5 && feh --bg-fill --randomize /home/olie/Pictures/Earthpapers/&
+# Single monitor setup
+#bspc monitor HDMI-1 -d 1 2 3 4 5 6 7 8 9 10
+
+# or Multimonitor setup
+bspc monitor DP-0 -d 2 4 6 8 10
+bspc monitor HDMI-1 -d 1 3 5 7 9
+
+env MONITOR=DP-0 polybar hidpi&
+env MONITOR=HDMI-1 polybar hidpi&
+# dunst& # omg ultra annoying notification thing ... it was here all along!?

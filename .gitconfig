@@ -1,5 +1,5 @@
 [user]
-    name = Oliver Blanthorn
+	name = Oliver Blanthorn
 	email = freedom4cows@gmail.com
     signingKey = Blanthorn
 [push]
@@ -15,14 +15,20 @@
     ui = auto
 [core]
     excludesfile = ~/.gitignore
-	pager = diff-so-fancy | less --tabs=4 -RFX
+	; pager = diff-so-fancy | less --tabs=4 -RFX
 [diff]
-	tool = icdiff
-    algorithm = histogram
+	; tool = icdiff
+    ; algorithm = histogram
+    external = difft
+    tool = difftastic
+[pager]
+    difftool = true
 [difftool]
     prompt = false
-[difftool "icdiff"]
-    cmd = icdiff --line-numbers $LOCAL $REMOTE
+; [difftool "icdiff"]
+;     cmd = icdiff --line-numbers $LOCAL $REMOTE
+; [difftool "difftastic"]
+;     cmd = difft "$MERGED" "$LOCAL" "abcdef1" "100644" "$REMOTE" "abcdef2" "100644"
 [log]
     decorate = auto
     date = relative
@@ -31,6 +37,9 @@
     tool = vimdiff
     conflictstyle = diff3
     prompt = false
+; [merge "mergiraf"] ; doesn't seem to work automatically :(
+;     name = mergiraf
+;     driver = mergiraf merge --git %O %A %B -s %S -x %X -y %Y -p %P -l %L
 [alias]
     nicelog = "log --graph --abbrev-commit --stat"
     loggraph = "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'"
@@ -42,3 +51,10 @@
 [url "git@github.com:"]
     pushInsteadOf = "https://github.com/"
     pushInsteadOf = "git://github.com/"
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[pull]
+	rebase = false

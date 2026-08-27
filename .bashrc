@@ -1,5 +1,6 @@
 # ~/.bashrc
 #
+export PATH="$PATH:/home/olie/.local/bin:/home/olie/go/bin"
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -32,4 +33,14 @@ PS1='[\u@\h \W]\$ '
 # tmux-ssh() { ssh "$@" -A -X -t 'PS1=tmux-ssh- ; . ~/.bashrc ; tmux-x-attach'; tput init; }
 # above taken from https://unix.stackexchange.com/questions/251595/vim-losing-ability-to-copy-to-client-clipoard-over-ssh but have not been able to get to work perfectly
 
-exec fish
+# fix antigravity
+if [[ -n "$ANTIGRAVITY_AGENT" ]]; then
+    export PS1='$ '
+#    unset PROMPT_COMMAND
+#    source ~/sh.bin/profile.sh    # pure environment, no interactive fluff
+else
+    exec fish
+fi
+
+# wtf is this
+# source /home/olie/.config/broot/launcher/bash/br

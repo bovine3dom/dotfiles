@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Todo:
+# install yay
+# give choice for gui
+
 # Because Git submodule commands cannot operate without a work tree, they must
 # be run from within $HOME (assuming this is the root of your dotfiles)
 cd "$HOME"
@@ -9,23 +13,23 @@ mkdir -p .undodir
 
 
 echo "Install programmes"
-if [ -z "$DISPLAY" ]; then
-    toguiornotgui="vim";
-else
+#if [ -z "$DISPLAY" ]; then
+#    toguiornotgui="vim";
+#else
     toguiornotgui="gvim firefox gnome-terminal";
-fi
+#fi
 fonts="noto-fonts ttf-iosevka-term"
 web="elinks surfraw dnsutils wget curl openssh npm"
 terminal="tmux screen tldr fish fzf keychain neovim"
-code="python python-pip python2 python2-pip julia git python-neovim"
-sudo pacman --needed -Sy pacaur
-pacaur --needed -Sy $fonts $web $terminal $code $toguiornotgui
+code="python python-pip python2 python2-pip julia git python-neovim diff-so-fancy"
+#sudo pacman --needed -Sy pacaur
+yay --needed -Sy $fonts $web $terminal $code $toguiornotgui
 read
 echo "Update vim plugins"
 vim +PlugInstall +PlugUpdate +PlugUpgrade +qall
 
 echo "Update fish plugins"
-fish -c fisher up 
+fish -c fisher
 
 # Fish abbreviations
 fish -c "abbr g git
@@ -35,7 +39,8 @@ abbr gp 'git pull'
 abbr gcm 'git checkout master'
 abbr gc 'git checkout'
 abbr grc 'git rebase --continue'
-abbr nrb 'npm run build'
+abbr nrb 'yarn run build'
+abbr nrr 'yarn run run'
 abbr ts 'task sync'
 abbr t 'task'
 abbr ta 'tmux attach; or tmux'"
