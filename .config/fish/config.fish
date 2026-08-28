@@ -2,7 +2,7 @@ fish_vi_key_bindings
 set -gx EDITOR nvim
 set -gx GPG_TTY (tty)
 set -gx BROWSER firefox
-set -gx GDK_SCALE 2
+set -e GDK_SCALE
 
 fish_add_path $HOME/bin $HOME/.local/bin $HOME/.cargo/bin $HOME/.composer/vendor/bin
 
