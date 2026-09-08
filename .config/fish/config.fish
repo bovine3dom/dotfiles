@@ -24,9 +24,6 @@ if status is-interactive; and type -q keychain
     test -f $HOME/.ssh/propbi; and set -a keys $HOME/.ssh/propbi
 
     if test (count $keys) -gt 0
-        keychain --quiet -Q $keys
+        SHELL=(which fish) keychain --eval --quiet -Q $keys | source
     end
 end
-
-set -l keychain_env $HOME/.keychain/(hostname)-fish
-test -r $keychain_env; and source $keychain_env
